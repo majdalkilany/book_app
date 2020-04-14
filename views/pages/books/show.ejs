@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
+    <title>Book Details</title>
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
     <header>
         <nav>
             <a href="/"><h1>Best Books!</h1></a>
             <a href="#"><i class="fa fa-bars"></i></a>
         </nav>
-        <section id="pageTitle">Search Results</section>
+        <section id="pageTitle">Book Details</section>
     </header>
-
-    <main>
-        <% books.forEach(book => {%>
-        <div>
-            <img src="<%= book.imageUrl%>" />
-            <h3> <%= book.title %> </h3>
-            <h4> <%= book.authors %> </h4>
-            <p> <%= book.description %> </p>
-            <form action="/books/" method="POST">
-                <input type="hidden" name="bookID" value="<%= book.bookID %>">
-                <input type="submit" value="Select This Book">
-            </form>
-        </div>
-        <br>
-        <% }) %>
-    </main>
+<main>
+    <div>
+        <img src="<%= book.imageurl%>" />
+        <h3> <%= book.title %> </h3>
+        <h4> <%= book.authors %> </h4>
+        <p style="background-color: #eeeeee; border-radius: 5px; padding: 0 5%; line-height: 150%;"> <%= book.description%> </p>
+        <h4> ISBN: <%= book.isbn%> </h4>
+    </div>
+</main>
 
     <footer>
         <ul>
@@ -44,5 +35,4 @@
     </ul>
     </footer>
 </body>
-
 </html>

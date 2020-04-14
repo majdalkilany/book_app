@@ -11,14 +11,22 @@
 <body>
     <header>
         <nav>
-            <h1>Best Books!</h1>
+            <a href="/"><h1>Best Books!</h1></a>
             <a href="#"><i class="fa fa-bars"></i></a>
         </nav>
-        <section id="pageTitle">Your Books</section>
+        <section id="pageTitle">Saved Books<span><%=book.length %></span></section>
     </header>
-
-    <h1>Hello World</h1>
-
+    <main>
+        <% book.forEach(book => {%>
+        <div>
+            <img src="<%= book.imageurl%>" />
+            <h3> <%= book.title %> </h3>
+            <h4> <%= book.authors %> </h4>
+            <a href="/books/<%=book.bookid %>"><button>View Details</button></a>
+        </div>
+        <br>
+        <% }) %>
+    </main>
     <footer>
         <ul>
         <li>1</li>
